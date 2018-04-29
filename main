@@ -1,0 +1,60 @@
+using System;
+using System.Linq;
+
+namespace examLogo
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            int input = int.Parse(Console.ReadLine());
+
+            int[] exams = new int[input];
+
+            int[] credits = new int[input];
+
+            int[] scores = new int[input];
+
+            if (input >= 1 && input <= 10)
+            {
+                for (int i = 0; i < input; i++)
+                {
+                    exams[i] = int.Parse(Console.ReadLine());
+
+                    credits[i] = int.Parse(exams[i].ToString().Remove(2, 1));
+
+                    scores[i] = int.Parse(exams[i].ToString().Remove(0, 2));
+
+                }
+
+                double averageScore = scores.Average();
+
+                double sumCredits = credits.Sum();
+
+                if (averageScore >= 2 && averageScore < 3)
+                {
+                    Console.WriteLine("0.00");
+                }
+                if (averageScore >= 3 && averageScore < 4)
+                {
+                    Console.WriteLine(String.Format("{0:0.00}", sumCredits / 2));
+                }
+                if (averageScore >= 4 && averageScore < 5)
+                {
+                    Console.WriteLine(String.Format("{0:0.00}", sumCredits * 0.7));
+                }
+                if (averageScore >= 5 && averageScore < 6)
+                {
+                    Console.WriteLine(String.Format("{0:0.00}", sumCredits * 0.85));
+                }
+                if (averageScore == 6)
+                {
+                    Console.WriteLine(String.Format("{0:0.00}", sumCredits));
+                }
+                Console.WriteLine(String.Format("{0:0.00}", averageScore));
+            }
+        }
+     
+    }
+}
