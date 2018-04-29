@@ -21,11 +21,11 @@ namespace examLogo
                 for (int i = 0; i < input; i++)
                 {
                     exams[i] = int.Parse(Console.ReadLine());
-                    if (exams[i] >= 32 && exams[i] <= 306) { }
+                    if (exams[i] >= 32 && exams[i] <= 306) { 
                     credits[i] = int.Parse(exams[i].ToString().Remove(2, 1));
 
                     scores[i] = int.Parse(exams[i].ToString().Remove(0, 2));
-                }
+                
                 }
 
                 double averageScore = scores.Average();
